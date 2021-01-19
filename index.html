@@ -1,0 +1,51 @@
+<html>
+<meta charset="UTF-8">
+
+<head>
+    
+    <title>basic-i18n.js Demo</title>
+
+    <script src='js/basic-i18n.js' charset='utf-8' type='text/javascript'></script>
+    <script src='js/i18n.english.js' charset='utf-8' type='text/javascript'></script>
+    <script src='js/i18n.german.js' charset='utf-8' type='text/javascript'></script>
+
+</head>
+    
+<body>
+    
+    <div>
+
+        <div>
+            <span id='greeting'></span>
+        </div>
+
+        <div>
+            <span id='duration'></span>
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+
+    let i18n = new I18n();
+
+    // 'english' is an language pack object of a certain layout
+    i18n.setLanguage(english);
+  
+    // The identifier 'HELLO_YOU' is linked to a template string
+    document.getElementById('greeting').innerText =
+        i18n.text('HELLO_YOU', { name: 'Coder' } 
+    );
+
+    // The identifier 'DURATION' is linked to a function that returns a template string
+    document.getElementById('duration').innerText =
+        i18n.text('DURATION', { days: 8 } 
+    );
+
+
+</script>
+
+
+</html>
